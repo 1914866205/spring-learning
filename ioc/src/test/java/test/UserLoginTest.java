@@ -1,8 +1,8 @@
 package test;
 
 
-import com.soft1851.spring.ioc.dao.User;
-import com.soft1851.spring.ioc.dao.UserLogin;
+import com.soft1851.spring.ioc.entity.User;
+import com.soft1851.spring.ioc.entity.UserLogin;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

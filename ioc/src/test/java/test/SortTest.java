@@ -1,6 +1,6 @@
 package test;
 
-import com.soft1851.spring.ioc.dao.Sort;
+import com.soft1851.spring.ioc.entity.Sort;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

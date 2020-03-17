@@ -1,4 +1,4 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.ioc.entity;
 
 public class Phone {
     private String brand;

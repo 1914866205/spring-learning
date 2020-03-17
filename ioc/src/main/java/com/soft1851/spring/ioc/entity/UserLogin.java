@@ -1,4 +1,4 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.ioc.entity;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

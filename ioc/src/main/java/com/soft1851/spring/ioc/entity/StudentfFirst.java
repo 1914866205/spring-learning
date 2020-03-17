@@ -1,20 +1,22 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.ioc.entity;
 
-public class Student {
+import com.soft1851.spring.ioc.entity.Phone;
+
+public class StudentfFirst {
     private String name;
     private Phone phone;
 
-    public Student() {
+    public StudentfFirst() {
     }
 
-    public Student(String name, Phone phone) {
+    public StudentfFirst(String name, Phone phone) {
         this.name = name;
         this.phone = phone;
     }
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentfFirst{" +
                 "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
