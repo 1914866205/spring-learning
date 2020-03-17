@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--<bean id="phone" class="com.spring.sort.Phone">-->
+<!--    <constructor-arg name="brand" value="iphone11"/>-->
+<!--    <constructor-arg name="price" value="8848"/>-->
+<!--</bean>-->
+    <bean id="phone" class="com.soft1851.spring.ioc.dao.Phone">
+        <property name="brand" value="小米"/>
+        <property name="price" value="123123"/>
+    </bean>
+
+    <bean id="student" class="com.soft1851.spring.ioc.dao.Student">
+        <property name="name" value="涛涛"/>
+        <property name="phone" ref="phone"/>
+    </bean>
+
+    <bean id="user" class="com.soft1851.spring.ioc.dao.User">
+        <property name="account"  value="admin"/>
+        <property name="password"  value="111"/>
+    </bean>
+
+    <bean id="userlogin" class="com.soft1851.spring.ioc.dao.UserLogin">
+        <property name="user" ref="user"/>
+    </bean>
+
+
+</beans>
