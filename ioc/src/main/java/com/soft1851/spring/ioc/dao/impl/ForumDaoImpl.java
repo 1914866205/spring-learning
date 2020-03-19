@@ -1,11 +1,14 @@
 package com.soft1851.spring.ioc.dao.impl;
 
+import com.soft1851.spring.ioc.config.JDBCConfig;
 import com.soft1851.spring.ioc.dao.ForumDao;
 import com.soft1851.spring.ioc.entity.Forum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -13,11 +16,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 //使用这个注解可以直接通过Autowided注入
-@Repository
+//@Repository
+@Component
 public class ForumDaoImpl implements ForumDao {
-    @Autowired
+//    @Autowired
     private JdbcTemplate jdbcTemplate;
+//AnnotationConfigApplicationContext actx = new AnnotationConfigApplicationContext(JDBCConfig.class);
+//    private JdbcTemplate jdbcTemplate = (JdbcTemplate) actx.getBean("jdbcTemplate");
 
+    public ForumDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
     @Override
     public int insert(Forum forum) {
         String sql = "INSERT INTO  t_forum VALUES (?,?)";
@@ -67,6 +80,7 @@ public class ForumDaoImpl implements ForumDao {
     public List<Forum> selectAll() {
         String sql = "SELECT * FROM t_forum";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Forum.class));
+
     }
 
 }

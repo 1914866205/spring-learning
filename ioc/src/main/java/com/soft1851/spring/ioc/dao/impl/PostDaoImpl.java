@@ -32,7 +32,6 @@ public class PostDaoImpl implements PostDao {
         return jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
-//        Object[] args = {post.getPostId(),post.getForimId(),post.getTitle()};
                 preparedStatement.setInt(1, postList.get(i).getPostId());
                 preparedStatement.setInt(2, postList.get(i).getForimId());
                 preparedStatement.setString(3, postList.get(i).getTitle());
@@ -68,4 +67,27 @@ public class PostDaoImpl implements PostDao {
     public List<Post> selectAll() {
         String sql = "SELECT * FROM t_post";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Post.class));    }
+
+    @Override
+    public int selectCount() {
+        String sql = "SELECT count(*) FROM t_post";
+        return jdbcTemplate.queryForObject(sql,Integer.class);
+    }
+
+    @Override
+    public int[] batchDelete(List<Post> posts){
+        final List<Post> postList = posts;
+        String sql = "DELETE FROM t_post WHERE post_id=?";
+
+        return jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
+                preparedStatement.setInt(1, postList.get(i).getPostId());
+            }
+
+            @Override
+            public int getBatchSize() {
+                return postList.size();
+            }
+        });    }
 }

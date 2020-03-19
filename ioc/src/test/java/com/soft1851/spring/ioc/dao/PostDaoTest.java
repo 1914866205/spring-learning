@@ -59,4 +59,21 @@ public class PostDaoTest {
             System.out.println(post);
         }
     }
+
+    @Test
+    public void testSelectCount(){
+        int num = postDao.selectCount();
+        System.out.println(num);
+    }
+
+
+    @Test
+    public void testeBatchDelete(){
+        Post[] posts = {Post.builder().postId(2).forimId(2).title("测试帖子2").content("xxx").build(),
+                Post.builder().postId(3).forimId(1).title("测试帖子3").content("hhh").build()
+        };
+        List<Post> postList = Arrays.asList(posts);
+        int[] rows = postDao.batchDelete(postList);
+        System.out.println("row"+rows);
+    }
 }

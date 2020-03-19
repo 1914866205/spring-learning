@@ -48,4 +48,17 @@ public interface PostDao {
      */
     List<Post> selectAll();
 
+    /**
+     * 查询所有帖子数目
+     * @return
+     */
+    int selectCount();
+
+
+    /**
+     * 批量删除Post
+     * @param posts
+     * @return int[]
+     */
+    int[] batchDelete(List<Post> posts);
 }

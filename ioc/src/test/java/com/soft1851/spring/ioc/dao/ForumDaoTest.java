@@ -1,6 +1,7 @@
 package com.soft1851.spring.ioc.dao;
 
 import com.soft1851.spring.ioc.entity.Forum;
+import com.soft1851.spring.ioc.entity.Post;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class ForumDaoTest {
 
     @Test
     public void update(){
-        Forum forum=forumDao.get(1);
+        Forum forum=forumDao.get(5);
         forum.setForumName("测试论坛修改的新名称");
         int n = forumDao.update(forum);
         System.out.println("n"+n);
@@ -43,16 +44,15 @@ public class ForumDaoTest {
 
     @Test
     public void get(){
-        Forum forum=forumDao.get(1);
+        Forum forum=forumDao.get(7);
         System.out.println(forum);
     }
 
     @Test
     public void selectAll(){
         List<Forum> forums = forumDao.selectAll();
-        System.out.println(forums.get(0));
-        System.out.println(forums.get(1));
-        System.out.println(forums.get(2));
-        System.out.println(forums.get(3));
+        for (Forum forum:forums) {
+            System.out.println(forum);
+        }
     }
 }
