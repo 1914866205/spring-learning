@@ -6,22 +6,22 @@
 <!--    <constructor-arg name="brand" value="iphone11"/>-->
 <!--    <constructor-arg name="price" value="8848"/>-->
 <!--</bean>-->
-    <bean id="phone" class="com.soft1851.spring.ioc.entity.Phone">
+    <bean id="phone" class="com.soft1851.spring.orm.entity.Phone">
         <property name="brand" value="小米"/>
         <property name="price" value="123123"/>
     </bean>
 
-    <bean id="student" class="com.soft1851.spring.ioc.entity.StudentfFirst">
+    <bean id="student" class="com.soft1851.spring.orm.entity.StudentfFirst">
         <property name="name" value="涛涛"/>
         <property name="phone" ref="phone"/>
     </bean>
 
-    <bean id="user" class="com.soft1851.spring.ioc.entity.User">
+    <bean id="user" class="com.soft1851.spring.orm.entity.User">
         <property name="account"  value="admin"/>
         <property name="password"  value="111"/>
     </bean>
 
-    <bean id="userlogin" class="com.soft1851.spring.ioc.entity.UserLogin">
+    <bean id="userlogin" class="com.soft1851.spring.orm.entity.UserLogin">
         <property name="user" ref="user"/>
     </bean>
 

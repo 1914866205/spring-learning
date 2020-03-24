@@ -1,0 +1,91 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">-->
+<!--<bean id="phone" class="com.soft1851.spring.orm.entity.Phone">-->
+<!--    <property name="brand" value="oppo"/>-->
+<!--    <property name="price" value="2600"/>-->
+<!--</bean>-->
+
+<!--    <bean id="phone2" class="com.soft1851.spring.orm.entity.Phone">-->
+<!--        <property name="brand" value="iphone"/>-->
+<!--        <property name="price" value="6300"/>-->
+<!--    </bean>-->
+<!--    <bean id="phone3" class="com.soft1851.spring.orm.entity.Phone">-->
+<!--        <property name="brand" value="小米"/>-->
+<!--        <property name="price" value="1800"/>-->
+<!--    </bean>-->
+<!--&lt;!&ndash;    这里报错，可以alt+enter导入p的命名空间&ndash;&gt;-->
+<!--    <bean id="phone4" class="com.soft1851.spring.orm.entity.Phone" p:brand="iphoneX" p:price="8848">-->
+
+<!--    </bean>-->
+<!--    <bean id="student" class="com.soft1851.spring.orm.entity.Student">-->
+<!--        <property name="name" value="涛涛"/>-->
+<!--        <property name="id" value="1802343210"/>-->
+<!--        <property name="list">-->
+<!--            <list>-->
+<!--                <ref bean="phone"/>-->
+<!--                <ref bean="phone2"/>-->
+<!--                <ref bean="phone3"/>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--    </bean>-->
+
+<!--    <bean id="student2" class="com.soft1851.spring.orm.entity.Student" p:name="ntt" p:id="10" />-->
+<!--    <bean id="student3" class="com.soft1851.spring.orm.entity.Student" p:name="xjj" p:id="10" />-->
+
+<!--    <bean id="grade" class="com.soft1851.spring.orm.entity.Grade">-->
+<!--        <property name="name" value="xka"></property>-->
+<!--        <property name="listGrade">-->
+<!--            <list>-->
+<!--                <ref bean="student"/>-->
+<!--                <ref bean="student2"/>-->
+<!--                <ref bean="student3"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean id="grade2" class="com.soft1851.spring.orm.entity.Grade">-->
+<!--        <property name="name" value="xka"></property>-->
+<!--        <property name="setGrade">-->
+<!--            <set>-->
+<!--                <ref bean="student"/>-->
+<!--                <ref bean="student2"/>-->
+<!--                <ref bean="student3"/>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean id="grade3" class="com.soft1851.spring.orm.entity.Grade">-->
+<!--        <property name="name" value="xka"></property>-->
+<!--        <property name="mapGrade">-->
+<!--            <map>-->
+<!--                <entry key="2" value-ref="student2"/>-->
+<!--                <entry key="3" value-ref="student3"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--&lt;!&ndash;开启注解&ndash;&gt;-->
+<!--    <context:annotation-config/>-->
+<!--    <context:component-scan base-package="com.soft1851.spring.orm"/>-->
+<!--&lt;!&ndash;读入外部数据库配置&ndash;&gt;-->
+<!--    <context:property-placeholder location="db.properties"/>-->
+
+<!--&lt;!&ndash;   配置数据源&ndash;&gt;-->
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"-->
+<!--    init-method="init">-->
+<!--        <property name="driverClassName" value="${jdbc.driver}"/>-->
+<!--        <property name="url" value="${jdbc.url}"/>-->
+<!--        <property name="username" value="${jdbc.username}"/>-->
+<!--        <property name="password" value="${jdbc.password}"/>-->
+<!--&lt;!&ndash;      初始化连接池的大小&ndash;&gt;-->
+<!--        <property name="initialSize" value="8"/>-->
+<!--    </bean>-->
+<!--&lt;!&ndash;    配置Jdbc模板&ndash;&gt;-->
+<!--    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+
+<!--</beans>-->

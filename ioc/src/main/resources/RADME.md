@@ -28,7 +28,7 @@ public class AppConfig {
         //生成基于注解配置的应用上下文对象
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         //手动开启扫包
-        ctx.scan("com.soft1851.spring.ioc.config");
+        ctx.scan("com.soft1851.spring.orm.config");
         ctx.refresh();
         Book book = (Book) ctx.getBean("book");
         book.setName("java");
@@ -38,7 +38,7 @@ public class AppConfig {
 - 单元测试
 > 注意在xml配置文件中手动开启扫包操作
 ```
- <context:component-scan base-package="com.soft1851.spring.ioc.config"/>
+ <context:component-scan base-package="com.soft1851.spring.orm.config"/>
 ```
 
 运行结果

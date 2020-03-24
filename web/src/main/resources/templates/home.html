@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="never">
+    <title>主页</title>
+</head>
+<body>
+<h2>Spring MVC</h2>
+<p th:text="${message}">内容</p>
+<hr>
+<div th:each="book:${bookList}">
+    <p th:text="${book.name}">图书名称</p>
+    <img th:src="${book.cover}" alt=""/>
+</div>
+</body>
+</html>

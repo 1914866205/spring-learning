@@ -1,6 +1,6 @@
 package test;
 
-import com.soft1851.spring.ioc.entity.Phone;
+import com.soft1851.spring.orm.entity.Phone;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
