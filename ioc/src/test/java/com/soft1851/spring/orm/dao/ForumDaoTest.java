@@ -1,6 +1,7 @@
 package com.soft1851.spring.orm.dao;
 
 import com.soft1851.spring.orm.entity.Forum;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.List;
 public class ForumDaoTest {
 //    @Autowired
     private ForumDao forumDao;
-//    @Before
+    @Before
 //    public void init(){
 //        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(JDBCConfig.class);
 //        ctx.scan("com.soft1851.spring.ioc.config");

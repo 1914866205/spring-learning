@@ -1,0 +1,14 @@
+com\soft1851\spring\orm\dao\impl\PostDaoImpl$1.class
+com\soft1851\spring\orm\entity\Forum$ForumBuilder.class
+com\soft1851\spring\orm\dao\impl\PostDaoImpl.class
+com\soft1851\spring\orm\App.class
+com\soft1851\spring\orm\dao\PostDao.class
+com\soft1851\spring\orm\entity\Post.class
+com\soft1851\spring\orm\dao\impl\PostDaoImpl$2.class
+com\soft1851\spring\orm\entity\Forum.class
+com\soft1851\spring\orm\dao\ForumDao.class
+com\soft1851\spring\orm\dao\impl\ForumDaoImpl$1.class
+com\soft1851\spring\orm\entity\Post$PostBuilder.class
+com\soft1851\spring\orm\dao\impl\ForumDaoImpl.class
+com\soft1851\spring\orm\entity\Test.class
+com\soft1851\spring\orm\config\JDBCConfig.class

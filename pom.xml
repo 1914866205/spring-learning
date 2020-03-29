@@ -15,6 +15,7 @@
         <module>orm</module>
         <module>aop</module>
         <module>web</module>
+        <module>web-noannocation</module>
     </modules>
 
     <properties>

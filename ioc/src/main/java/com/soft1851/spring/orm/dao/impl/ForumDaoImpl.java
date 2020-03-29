@@ -6,13 +6,14 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
 //使用这个注解可以直接通过Autowided注入
-//@Repository
+@Repository
 @Component
 public class ForumDaoImpl implements ForumDao {
 //    @Autowired

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+    <title>英雄联盟</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        background-color: #666;
+    }
+    .container{
+        margin-left: 8%;
+        margin-right: 5%;
+        margin-top: 20px;
+        display: flow;
+        height: auto;
+    }
+    .hero{
+        margin: 10px;
+        float: left;
+        color: white;
+        padding: 0;
+    }
+    .name {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        font-weight: initial;
+    }
+</style>
+<body>
+<img src="//img.crawler.qq.com/lolwebschool/0/JAutoCMS_LOLWeb_502aeca0f41324e403bd6c1eebe5036e/0" width="100%"height="auto">
+<div class="container" th:each="hero:${heros}">
+    <div class="hero">
+    <img class="img" th:src="${hero.img}"/>
+    <center>
+        <p class="name" th:text="${hero.name}"></p>
+    </center>
+    </div>
+</div>
+</body>
+</html>

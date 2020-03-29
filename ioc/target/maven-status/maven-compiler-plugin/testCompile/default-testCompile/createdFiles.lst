@@ -1,0 +1,7 @@
+test\SortTest.class
+test\UserLoginTest.class
+com\soft1851\spring\orm\dao\ForumDaoTest.class
+com\soft1851\spring\orm\dao\PostDaoTest.class
+test\StudentTest.class
+test\PhoneTest.class
+test\GradeTest.class
