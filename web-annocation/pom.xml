@@ -7,7 +7,7 @@
 
     <name>web-noannocation</name>
     <groupId>com.soft1851</groupId>
-    <artifactId>web-noannocation</artifactId>
+    <artifactId>web-annocation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>

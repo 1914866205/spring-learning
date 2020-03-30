@@ -15,7 +15,10 @@
         <module>orm</module>
         <module>aop</module>
         <module>web</module>
-        <module>web-noannocation</module>
+        <module>web-annocation</module>
+        <module>mybatis-xml</module>
+        <module>jdbc-xml</module>
+        <module>jdbc-annocation</module>
     </modules>
 
     <properties>
@@ -32,6 +35,8 @@
         <slf4j.version>1.7.30</slf4j.version>
         <druid.version>1.1.21</druid.version>
         <fastjson.version>1.2.66</fastjson.version>
+        <mybatis.version>3.5.4</mybatis.version>
+        <spring-mybatis.version>2.0.4</spring-mybatis.version>
     </properties>
 
     <dependencies>
@@ -124,7 +129,29 @@
             <artifactId>thymeleaf-spring5</artifactId>
             <version>3.0.11.RELEASE</version>
         </dependency>
-
+        <!--MyBatis依赖-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <!--Spring整合Mybatis依赖-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${spring-mybatis.version}</version>
+        </dependency>
+        <!--切面配置所需的aop和aspects依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
     </dependencies>
     <build>
     <plugins>
