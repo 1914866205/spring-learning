@@ -75,7 +75,15 @@ public interface StudentServer {
 
     /**
      * 查询所有学生，按生日排序，多对一关联查询学生所在班级信息
+     *
      * @return
      */
     List<Student> selectAll();
+
+    /**
+     * 分页
+     * @return
+     */
+    List<Student> queryStudentsBySql(int currPage, int pageSize);
+
 }

@@ -100,4 +100,9 @@ public class StudentServerTest {
     public void selectAll(){
         System.out.println(studentServer.selectAll());
     }
+
+    @Test
+    public void queryStudentsBySql(){
+        System.out.println(studentServer.queryStudentsBySql(4,5));
+    }
 }

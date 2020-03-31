@@ -7,7 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description TODO
@@ -69,5 +71,11 @@ public class StudentServerImpl implements StudentServer {
         return studentMapper.selectAll();
     }
 
+    @Override
+    public List<Student> queryStudentsBySql(int currPage, int pageSize) {
+        Map<String, Object> data = new HashMap();
+        data.put("currIndex", (currPage-1)*pageSize);
+        data.put("pageSize", pageSize);
+        return studentMapper.queryStudentsBySql(data);    }
 
 }

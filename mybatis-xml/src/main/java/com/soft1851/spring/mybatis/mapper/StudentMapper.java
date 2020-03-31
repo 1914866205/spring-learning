@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description TODO
@@ -86,4 +87,12 @@ public interface StudentMapper {
      * @return
      */
     List<Student> selectAll();
+
+    /**
+     * 分页
+     * @param data
+     * @return
+     */
+    List<Student> queryStudentsBySql(Map<String,Object> data);
+
 }

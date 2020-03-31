@@ -121,4 +121,9 @@
                             ON s.clazz_id = c.clazz_id
         ORDER BY s.birthday DESC
     </select>
+
+    <select id="queryStudentsBySql" parameterType="map" resultMap="studentMap">
+        select * from springtest.t_student limit #{currIndex} , #{pageSize}
+    </select>
+
 </mapper>
