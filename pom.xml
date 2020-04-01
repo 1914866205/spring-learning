@@ -19,6 +19,7 @@
         <module>mybatis-xml</module>
         <module>jdbc-xml</module>
         <module>jdbc-annocation</module>
+        <module>hibernate-xml</module>
     </modules>
 
     <properties>
@@ -37,6 +38,7 @@
         <fastjson.version>1.2.66</fastjson.version>
         <mybatis.version>3.5.4</mybatis.version>
         <spring-mybatis.version>2.0.4</spring-mybatis.version>
+        <hibernate.version>5.4.13.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -157,6 +159,13 @@
             <artifactId>javax.annotation-api</artifactId>
             <version>1.3.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
