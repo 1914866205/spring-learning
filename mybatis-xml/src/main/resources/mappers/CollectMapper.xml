@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soft1851.spring.mybatis.mapper.CollectMapper">
+    <resultMap id="teacherMap" type="Teacher">
+        <id column="teacher_id" property="teacherId"/>
+        <result column="teacher_name" property="teacherName"/>
+        <association property="clazz" javaType="Clazz">
+            <id column="clazz_id" property="clazzId"/>
+            <result column="clazz_name" property="clazzName"/>
+        </association>
+    </resultMap>
+    <select id="getTeacherOneToOne" parameterType="int" resultMap="teacherMap">
+        SELECT t.teacher_id, t.teacher_name, c.clazz_id, c.clazz_name
+        FROM springtest.t_teacher t,
+             springtest.t_clazz c
+        WHERE t.teacher_id = #{teacherId}
+          AND t.clazz_id = c.clazz_id
+    </select>
+
+    <resultMap id="userMap" type="SysUser">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+        <result column="email" property="email"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="status" property="status"/>
+        <result column="binding" property="binding"/>
+        <result column="credits" property="credits"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+    </resultMap>
+    <select id="getUserByMusic" parameterType="Music" resultType="SysUser">
+        SELECT s.id,s.user_name,s.password,s.salt,s.email,s.phone_number,s.status,s.binding,s.credits,s.create_time,s.last_login_time
+        FROM springtest.sys_user s,springtest.collect c
+        WHERE c.music_id=#{id}
+          AND c.user_id=s.id
+    </select>
+
+    <resultMap id="musicMap" type="Music">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="songlist__time" property="songList_Time"/>
+        <result column="author" property="author"/>
+        <result column="link" property="author"/>
+    </resultMap>
+    <select id="getMusicByUser" parameterType="SysUser" resultType="Music">
+        SELECT m.id,m.title,m.songlist__time,m.author,m.link
+        FROM springtest.music m,springtest.collect c
+        WHERE  c.user_id=#{id}
+            AND c.music_id=m.id
+    </select>
+
+
+    <insert id="batchInsert" parameterType="Collect">
+        INSERT INTO springtest.collect VALUES
+        <foreach collection="collects" item="item" index="index" separator=",">
+            (#{item.userId},#{item.musicId})
+        </foreach>
+    </insert>
+
+    <delete id="batchDelete" parameterType="Collect">
+        DELETE FROM springtest.collect
+        WHERE
+            <foreach collection="collects" item="item" index="index"
+                      separator="or">
+               ( music_id=#{item.musicId}
+                AND user_id=#{item.userId} )
+            </foreach>
+    </delete>
+</mapper>

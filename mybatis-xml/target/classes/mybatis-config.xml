@@ -24,5 +24,8 @@
         <typeAlias type="com.soft1851.spring.mybatis.vo.ClazzVo" alias="ClazzVo"/>
         <typeAlias type="com.soft1851.spring.mybatis.vo.MatterVo" alias="MatterVo"/>
         <typeAlias type="com.soft1851.spring.mybatis.entity.MatterDto" alias="MatterDto"/>
+        <typeAlias type="com.soft1851.spring.mybatis.entity.SysUser" alias="SysUser"/>
+        <typeAlias type="com.soft1851.spring.mybatis.entity.Music" alias="Music"/>
+        <typeAlias type="com.soft1851.spring.mybatis.entity.Collect" alias="Collect"/>
     </typeAliases>
 </configuration>

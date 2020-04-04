@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soft1851.spring.mybatis.mapper.SysUserMapper">
+
+    <select id="selectById" parameterType="int" resultType="SysUser">
+        SELECT *
+        FROM springtest.sys_user
+        WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="SysUser">
+        UPDATE springtest.sys_user
+        SET  last_login_time = #{lastLoginTime}
+        WHERE id = #{id}
+    </update>
+
+
+    <insert id="insert" parameterType="SysUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO springtest.sys_user (user_name, password, salt, email, phone_number, status, binding, credits, create_time, last_login_time)
+        VALUES (#{userName},#{password},#{salt},#{email},#{phoneNumber},#{status},#{binding},${credits},#{createTime},#{lastLoginTime})
+    </insert>
+
+    <select id="getUserByUser" parameterType="SysUser" resultType="SysUser">
+        SELECT *
+        FROM springtest.sys_user
+        WHERE
+        <if test="id !=null">
+            id = #{id}
+        </if>
+
+        <if test="email !=null">
+            AND email = #{email}
+        </if>
+
+        <if test="phoneNumber !=null">
+            AND phone_number = #{phoneNumber}
+        </if>
+    </select>
+
+    <update id="addCredits" parameterType="SysUser">
+        UPDATE springtest.sys_user
+        SET  credits= #{credits}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

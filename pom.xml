@@ -17,8 +17,6 @@
         <module>web</module>
         <module>web-annocation</module>
         <module>mybatis-xml</module>
-        <module>jdbc-xml</module>
-        <module>jdbc-annocation</module>
         <module>hibernate-xml</module>
     </modules>
 
