@@ -36,7 +36,7 @@
         <fastjson.version>1.2.66</fastjson.version>
         <mybatis.version>3.5.4</mybatis.version>
         <spring-mybatis.version>2.0.4</spring-mybatis.version>
-        <hibernate.version>5.4.13.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
     </properties>
 
     <dependencies>
